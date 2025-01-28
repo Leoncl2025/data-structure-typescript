@@ -1,8 +1,6 @@
 class QueueElement {
-    constructor(props, index = 0) {
+    constructor(props) {
         this.props = props;
-        this.index = index;
-        this.rawIndex = index;
     }
     /**
      * Compare this to other
@@ -14,7 +12,7 @@ class QueueElement {
     }
 }
 
-class MyPriorityQueue {
+class PriorityQueue {
     constructor(isMinHeap = true) {
         this.heap = [];
         this.isMinHeap = isMinHeap;
@@ -63,8 +61,6 @@ class MyPriorityQueue {
         const temp = this.heap[indexOne];
         this.heap[indexOne] = this.heap[indexTwo];
         this.heap[indexTwo] = temp;
-        this.heap[indexOne].index = indexOne;
-        this.heap[indexTwo].index = indexTwo;
     }
  
     peek() {
@@ -78,44 +74,23 @@ class MyPriorityQueue {
     // top element with highest priority then
     // heapifyDown will be called 
     remove() {
-        return this.removeAt(0);
-    }
-
-    removeAt(index) {
         if (this.heap.length === 0) {
             return null;
         }
-        const item = this.heap[index];
-        this.swap(index, this.heap.length - 1);
+        const item = this.heap[0];
+        this.heap[0] = this.heap[this.heap.length - 1];
         this.heap.pop();
-        this.heapifyDown(index);
-        this.heapifyUp(index);
+        this.heapifyDown();
         return item;
     }
  
     add(item) {
         this.heap.push(item);
-        item.index = this.heap.length - 1;
-        this.heapifyUp(this.heap.length - 1);
-    }
-
-    enqueue(item) {
-        return this.add(item);
-    }
-
-    dequeue() {
-        return this.remove();
-    }
-
-    isEmpty() {
-        return this.heap.length === 0;
+        this.heapifyUp();
     }
  
-    heapifyUp(indexUp) {
-        if (indexUp >= this.heap.length) {
-            return;
-        }
-        let index = indexUp;
+    heapifyUp() {
+        let index = this.heap.length - 1;
         if (this.isMinHeap) {
             while (this.hasParent(index) && this.parent(index).compareTo(this.heap[index])
             > 0) {
@@ -132,34 +107,49 @@ class MyPriorityQueue {
         }
     }
  
-    heapifyDown(index = 0) {
-        let indexDown = index;
-        while (this.hasLeftChild(indexDown)) {
-            let nextChildIndex = 0;
+    heapifyDown() {
+        let index = 0;
+        while (this.hasLeftChild(index)) {
+            let smallerChildIndex = this.getLeftChildIndex(index);
             if (this.isMinHeap) {
-                nextChildIndex = this.getLeftChildIndex(indexDown); // smallerChildIndex
-                if (this.hasRightChild(indexDown) && this.rightChild(indexDown).compareTo(this.leftChild(indexDown))
+                if (this.hasRightChild(index) && this.rightChild(index).compareTo(this.leftChild(index))
                 < 0) {
-                    nextChildIndex = this.getRightChildIndex(indexDown);
+                smallerChildIndex = this.getRightChildIndex(index);
                 }
-                if (this.heap[indexDown].compareTo(this.heap[nextChildIndex]) < 0) {
+                if (this.heap[index].compareTo(this.heap[smallerChildIndex]) < 0) {
                     break;
                 } else {
-                    this.swap(indexDown, nextChildIndex);
+                    this.swap(index, smallerChildIndex);
                 }
             } else {
-                nextChildIndex = this.getLeftChildIndex(indexDown); // largerChildIndex
-                if (this.hasRightChild(indexDown) && this.rightChild(indexDown).compareTo(this.leftChild(indexDown))
+                if (this.hasRightChild(index) && this.rightChild(index).compareTo(this.leftChild(index))
                 > 0) {
-                    nextChildIndex = this.getRightChildIndex(indexDown);
+                smallerChildIndex = this.getRightChildIndex(index);
                 }
-                if (this.heap[indexDown].compareTo(this.heap[nextChildIndex]) > 0) {
+                if (this.heap[index].compareTo(this.heap[smallerChildIndex]) > 0) {
                     break;
                 } else {
-                    this.swap(indexDown, nextChildIndex);
+                    this.swap(index, smallerChildIndex);
                 }
             }
-            indexDown = nextChildIndex;
+            index = smallerChildIndex;
         }
     }
 }
+let PriQueue = new PriorityQueue();
+
+// Adding the Elements
+PriQueue.add(new QueueElement(32));
+PriQueue.add(new QueueElement(45));
+PriQueue.add(new QueueElement(12));
+PriQueue.add(new QueueElement(65));
+PriQueue.add(new QueueElement(85));
+
+ 
+ 
+console.log(PriQueue.peek());
+console.log(PriQueue.remove());
+console.log(PriQueue.peek());
+console.log(PriQueue.remove());
+console.log(PriQueue.peek());
+console.log(PriQueue.remove());
