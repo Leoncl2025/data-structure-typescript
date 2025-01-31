@@ -6,7 +6,10 @@
 ## 二进制树 binary tree
 
 ### 增加了一些特性
-[0124. Binary Tree Maximum Path Sum](../0124.ts)
+
+#### [0124. Binary Tree Maximum Path Sum](../0124.ts)
+
+*难度：⭐️⭐️*
 
 我们给二进制树增加了一些特性，称之为`TreeNodeEnhanced`：
 
@@ -33,3 +36,9 @@ class TreeNodeEnhanced extends TreeNode {
     }
 }
 ```
+
+#### [0968. Binary Tree Cameras](../0968.ts)
+
+*难度：⭐️⭐️⭐️⭐️*
+
+这是动态规划和树结合的典型的例子。每个节点存入一个动态内存`dp`，通过它来避免重复计算。
