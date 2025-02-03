@@ -8,6 +8,7 @@
 
 ### [Union Find](./graph/unionFind/readme.md)
 
+## [Sort](./sort/readme.md)
 
 ## Commands
 
