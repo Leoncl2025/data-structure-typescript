@@ -42,3 +42,9 @@ class TreeNodeEnhanced extends TreeNode {
 *难度：⭐️⭐️⭐️⭐️*
 
 这是动态规划和树结合的典型的例子。每个节点存入一个动态内存`dp`，通过它来避免重复计算。
+
+### 构建二进制树
+
+#### [1028. Recover a Tree From Preorder Traversal](../1028.ts)
+利用回溯法来构建二进制树。合理地划分子任务，孩子的构建交给子任务。
+*难度：⭐️⭐️*
