@@ -1,5 +1,5 @@
-import { TreeNode } from "./tree/treeNode";
-import { buildTree } from "./tree/treeNode.utils";
+import { TreeNode } from "./tree/TreeNode";
+import { buildTree } from "./tree/TreeNode.utils";
 
 const MIN_VALUE = -Infinity;
 function maxPathSum(root: TreeNode | null): number {
