@@ -10,6 +10,8 @@
 
 ## [Sort](./sort/readme.md)
 
+## [Array](./array/readme.md)
+
 ## Commands
 
 ### Run ts file
