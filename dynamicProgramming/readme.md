@@ -19,6 +19,7 @@ Max(i, j) = max{k=i,...n,...,j}{Max(i,k-1) + nums[i-1]*nums[k]*nums[j+1]+Max(k+1
 (作者花了将近3天时间才推出公式来)
 
 [1524. Number of Sub-arrays With Odd Sum](../1524.ts)
+*难度：⭐️⭐️⭐️*
 
 状态转移公式使用了两个`dp`变量：
 ```typescript
@@ -33,3 +34,8 @@ if (v % 2 === 0) {
     ret = (ret + dpOdd) % base;
 }
 ```
+
+[0873. Length of Longest Fibonacci Subsequence](../0873.ts)
+*难度：⭐️⭐️*
+
+典型的重复计算子问题。
