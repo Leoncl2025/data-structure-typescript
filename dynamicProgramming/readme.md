@@ -39,3 +39,14 @@ if (v % 2 === 0) {
 *难度：⭐️⭐️*
 
 典型的重复计算子问题。
+
+[1092. Shortest Common Supersequence](../1092.ts)
+*难度：⭐️⭐️⭐️*
+
+这里的状态转移公式是：
+```
+dp[i+1][j+1] + 1 if str1[i] == str2[j]
+dp[i+1][j] + 1 if str1[i] != str2[j] but choose str1[i]
+dp[i][j+1] + 1 if str1[i] != str2[j] but choose str2[j]
+dp[i][j] = min(dp[i+1][j+1], dp[i+1][j], dp[i][j+1])
+```
