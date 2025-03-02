@@ -10,7 +10,7 @@
 
 *难度：⭐️⭐️⭐️⭐️⭐️*
 
-[0312. Burst Balloons](../0312.ts)
+[0312. Burst Balloons](../problems/0312.ts)
 
 这里的状态转移公式是：
 ```
@@ -18,7 +18,7 @@ Max(i, j) = max{k=i,...n,...,j}{Max(i,k-1) + nums[i-1]*nums[k]*nums[j+1]+Max(k+1
 ```
 (作者花了将近3天时间才推出公式来)
 
-[1524. Number of Sub-arrays With Odd Sum](../1524.ts)
+[1524. Number of Sub-arrays With Odd Sum](../problems/1524.ts)
 *难度：⭐️⭐️⭐️*
 
 状态转移公式使用了两个`dp`变量：
@@ -35,12 +35,12 @@ if (v % 2 === 0) {
 }
 ```
 
-[0873. Length of Longest Fibonacci Subsequence](../0873.ts)
+[0873. Length of Longest Fibonacci Subsequence](../problems/0873.ts)
 *难度：⭐️⭐️*
 
 典型的重复计算子问题。
 
-[1092. Shortest Common Supersequence](../1092.ts)
+[1092. Shortest Common Supersequence](../problems/1092.ts)
 *难度：⭐️⭐️⭐️*
 
 这里的状态转移公式是：

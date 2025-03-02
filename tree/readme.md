@@ -3,11 +3,13 @@
 
 *“它有左和右，是一个很好的规约思维：把问题分解为子问题。”*
 
+## [Segment Tree](./SegmentTree.md)
+
 ## 二进制树 binary tree
 
 ### 增加了一些特性
 
-#### [0124. Binary Tree Maximum Path Sum](../0124.ts)
+#### [0124. Binary Tree Maximum Path Sum](../problems/0124.ts)
 
 *难度：⭐️⭐️*
 
@@ -37,7 +39,7 @@ class TreeNodeEnhanced extends TreeNode {
 }
 ```
 
-#### [0968. Binary Tree Cameras](../0968.ts)
+#### [0968. Binary Tree Cameras](../problems/0968.ts)
 
 *难度：⭐️⭐️⭐️⭐️*
 
@@ -45,6 +47,6 @@ class TreeNodeEnhanced extends TreeNode {
 
 ### 构建二进制树
 
-#### [1028. Recover a Tree From Preorder Traversal](../1028.ts)
+#### [1028. Recover a Tree From Preorder Traversal](../problems/1028.ts)
 利用回溯法来构建二进制树。合理地划分子任务，孩子的构建交给子任务。
 *难度：⭐️⭐️*
