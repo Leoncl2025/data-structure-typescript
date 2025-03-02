@@ -1,7 +1,7 @@
 并查集
 
 # 实例
-[0547. Number of Provinces](../../0547.ts)
+[0547. Number of Provinces](../problems/0547.ts)
 
 # 数据结构
 我们用数组来记录每个元素和其parent的信息。
