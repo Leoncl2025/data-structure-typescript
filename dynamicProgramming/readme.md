@@ -50,3 +50,19 @@ dp[i+1][j] + 1 if str1[i] != str2[j] but choose str1[i]
 dp[i][j+1] + 1 if str1[i] != str2[j] but choose str2[j]
 dp[i][j] = min(dp[i+1][j+1], dp[i+1][j], dp[i][j+1])
 ```
+
+### 背包问题/选或不选问题
+给定一个序列，选择背负这个包裹还是不去选择这个包裹，都会对子问题产生影响。
+```
+dp[i] =
+Min(dp[i+1] + cost(["Select"]),
+dp[i+1] + cost["drop"])
+```
+
+#### [0322. Coin Change](../problems/0322.ts)
+
+动态转移公式是：
+```
+dp[i][amount] = Min(dp[i+1][amount] + 0,
+dp[i+1][amount-coin] + 1, dp[i+2][amount - 2*coin] + 2, ..., dp[i+1][amount-n*coint] + n)
+```
