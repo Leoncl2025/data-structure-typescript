@@ -3,7 +3,6 @@
  */
 import { DagEdge } from "./dagEdge";
 import { GraphVertexBase } from "./vertextBase";
-import { IComparable } from "../sort/ICompareable";
 import { IQueueElement } from "../sort/priorityQueue";
 
 export class DagVertex implements IQueueElement, GraphVertexBase {
