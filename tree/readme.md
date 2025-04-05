@@ -50,3 +50,7 @@ class TreeNodeEnhanced extends TreeNode {
 #### [1028. Recover a Tree From Preorder Traversal](../problems/1028.ts)
 利用回溯法来构建二进制树。合理地划分子任务，孩子的构建交给子任务。
 *难度：⭐️⭐️*
+
+#### [1123. Lowest Common Ancestor of Deepest Leaves](../problems/1123.ts)
+经典回归算法。
+*难度：⭐️*
