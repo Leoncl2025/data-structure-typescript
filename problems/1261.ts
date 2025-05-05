@@ -1,3 +1,4 @@
+import { TreeNode } from '../tree/TreeNode';
 
 class FindElements {
     private root: TreeNode | null;
