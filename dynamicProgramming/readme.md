@@ -66,3 +66,6 @@ dp[i+1] + cost["drop"])
 dp[i][amount] = Min(dp[i+1][amount] + 0,
 dp[i+1][amount-coin] + 1, dp[i+2][amount - 2*coin] + 2, ..., dp[i+1][amount-n*coint] + n)
 ```
+
+#### [0213 Rob house](../problems/0213.ts)
+
