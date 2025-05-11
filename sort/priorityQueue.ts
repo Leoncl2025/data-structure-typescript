@@ -11,19 +11,31 @@ export class NumberQueueElement implements IQueueElement {
     compareTo(other: NumberQueueElement): number {
         return this.value - other.value;
     }
+    clone(): NumberQueueElement {
+        return new NumberQueueElement(this.value, this.index);
+    }
 }
 
 export interface IQueueElement extends IComparable {
     index: number;
     compareTo(other: IQueueElement): number;
+    clone(): IQueueElement;
 }
 
-export class MyPriorityQueue {
-    heap: IQueueElement[];
+export class MyPriorityQueue<Q extends IQueueElement> {
+    heap: Q[];
     private isMinHeap: boolean;
     constructor(isMinHeap = true) {
         this.heap = [];
         this.isMinHeap = isMinHeap;
+    }
+
+    clone() {
+        const newQueue = new MyPriorityQueue(this.isMinHeap);
+        for (let i = 0; i < this.heap.length; i++) {
+            newQueue.add(this.heap[i].clone());
+        }
+        return newQueue;
     }
 
     clear() {
@@ -103,7 +115,7 @@ export class MyPriorityQueue {
         return item;
     }
  
-    add(item: IQueueElement) {
+    add(item: Q) {
         this.heap.push(item);
         item.index = this.heap.length - 1;
         this.heapifyUp(this.heap.length - 1);
@@ -117,7 +129,10 @@ export class MyPriorityQueue {
         return this.remove();
     }
 
-    modify(item: IQueueElement) {
+    modify(item: Q) {
+        if (!item) {
+            throw new Error("Item to be modified is null");
+        }
         this.heapifyDown(item.index);
         this.heapifyUp(item.index);
     }

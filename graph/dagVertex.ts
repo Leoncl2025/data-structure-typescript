@@ -64,6 +64,16 @@ export class DagVertex implements IQueueElement, GraphVertexBase {
         return edge;
     }
 
+    clone(): IQueueElement {
+        const clone = new DagVertex(this.key);
+        clone.shortestPathEstimate = this.shortestPathEstimate;
+        clone._inDegree = this._inDegree;
+        clone._outDegree = this._outDegree;
+        clone._inEdges = [...this._inEdges];
+        clone._outEdges = [...this._outEdges];
+        return clone;
+    }
+
     connectFrom(vertex: DagVertex, weight: number) {
         return vertex.connectTo(this, weight);
     }

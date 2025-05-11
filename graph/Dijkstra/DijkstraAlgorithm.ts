@@ -7,10 +7,10 @@ import { SingleSourceShortestStrategy } from "../singleSourceShortestStrategy";
  * The Dijkstra algorithm for finding the shortest path from a source vertex to all other vertices.
  */
 export class DijkstraAlgorithm implements SingleSourceShortestStrategy {
-    private priorityQueue: MyPriorityQueue;
+    private priorityQueue: MyPriorityQueue<DagVertex>;
 
     constructor() {
-        this.priorityQueue = new MyPriorityQueue();
+        this.priorityQueue = new MyPriorityQueue<DagVertex>();
     }
 
     /**
