@@ -19,6 +19,8 @@ Max(i, j) = max{k=i,...n,...,j}{Max(i,k-1) + nums[i-1]*nums[k]*nums[j+1]+Max(k+1
 
 和burst ballons类似的动规题目，只不过使用了3d dp. [0546. Romove Boxes](../problems/0546.ts)
 
+![alt text](image.png)
+
 [1524. Number of Sub-arrays With Odd Sum](../problems/1524.ts)
 *难度：⭐️⭐️⭐️*
 
