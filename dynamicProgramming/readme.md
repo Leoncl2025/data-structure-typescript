@@ -8,6 +8,8 @@
 
 ## 常见的几种例子
 
+### 数列max
+
 [0312. Burst Balloons](../problems/0312.ts)
 *难度：⭐️⭐️⭐️⭐️⭐️*
 
@@ -16,6 +18,8 @@
 Max(i, j) = max{k=i,...n,...,j}{Max(i,k-1) + nums[i-1]*nums[k]*nums[j+1]+Max(k+1,j)}
 ```
 (作者花了将近3天时间才推出公式来)
+
+#### 数列max + 3D dp
 
 和burst ballons类似的动规题目，只不过使用了3d dp. [0546. Romove Boxes](../problems/0546.ts)
 
